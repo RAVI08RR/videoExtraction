@@ -1,0 +1,184 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+button.view-h-btn.btn.btn-dark {
+  border-radius: 4px;
+  border: 1px solid #263F43;
+  background: #263F43;
+  width: 100%;
+  color: #FFF;
+  text-align: center;
+  font-family: "Red Hat Display",sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+
+.bg-light.card-results-match.mb-4.card {
+  background-color: #F0F7F4 !important;
+  border: none!important;
+}
+
+.bg-light.card-results-match.mb-2.card {
+  background-color: #f0f7f4!important;
+  border: none;
+}
+
+.position-relative.card {
+  border: none!important;
+  box-shadow: none!important;
+}
+
+.card-Subject.card-header {
+  border: none;
+  background-color: white;
+}
+.matched-ui-header-result.modal-header {
+  border: none;
+}
+
+button.view-h-btn.compare-btn-tr.btn.btn-dark {
+  background-color: white;
+  color: #263F43;
+  text-align: center;
+  font-family: "Red Hat Display";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+h3, h2 {
+  color: #353748!important;
+  text-align: center!important;
+  font-family: "Red Hat Display"!important;
+  font-size: 34px!important;
+  font-style: normal;
+  font-weight: 700!important;
+  line-height: normal!important;
+}
+
+input#location {
+  height: 46px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  padding: 20px;
+}
+
+button.history-btn {
+  border-radius: 10px;
+  border: 1px solid #263F43;
+  background-color: transparent;
+  padding: 9px 27px;
+}
+
+/* Add this in your CSS file */
+.custom-table .ant-table-thead > tr > th {
+  background: #263F43;
+  border-radius: 0px;
+  color: white; /* Optional: make the text white for better visibility */
+}
+
+.custom-table .ant-table-thead > tr > th::before{
+
+  display: none;
+}
+.view-btn{
+border-radius: 4px;
+border: 1px solid #263F43;
+}
+
+span.face-quality {
+  border-radius: 5px;
+  border: 1px solid #263F43;
+  padding: 20px;
+}
+
+button.history-btn>a {
+  color: rgb(38 63 67);
+  text-decoration: underline;
+  text-decoration: none;
+  display: flex;
+  gap: 12px;
+}
+
+.span.ant-select-selection-item {
+  align-self: center;
+}
+.ant-select-selection-item {
+  line-height: 36px !important;
+  display: flex;
+  align-items: center!important;
+}
+
+.submit-button.w-full.bg-primary.btn.btn-primary {
+  background-color: #2f4859!important;
+  border: #2f4859;
+}
+
+.px-3.py-1.rounded-lg.border.inline-block {
+  border-radius: 5px;
+  border: 1px solid #263F43;
+  background: #F0F7F4;
+}
+
+/* Custom Dropdown */
+.custom-dropdown-search {
+  padding: 10px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}
+
+.ant-select-selection-placeholder {
+  display: block;
+  padding: 0;
+  line-height: 30px;
+  transition: all 0.3s, visibility 0s;
+  align-self: center;
+  text-align: start;
+}
+
+.image-zomm-btn {
+  width: 36px;
+  height: 36px;
+}

@@ -1,0 +1,187 @@
+.nav-tabs {
+    border-bottom: none;
+  }
+  
+  .nav-tabs .nav-link {
+    border: none;
+    color: #000;
+    padding: 0.5rem 2rem;
+    margin: 0 0.5rem;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-tabs .nav-link.active {
+    background-color: #B2E5F7;
+    color: #000;
+  }
+  
+  .drop-zone {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+  
+  .drop-zone:hover {
+    border-color: #B2E5F7;
+  }
+  
+  .file-input {
+    display: none;
+  }
+  
+  .file-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .upload-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+    color: #666;
+  }
+  
+  .submit-btn {
+    border: none;
+    padding: 0.75rem 2.5rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+    background: #263F43!important;
+}
+  
+  .submit-btn:hover {
+    background-color: #243845;
+  }
+  
+  .selected-file {
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  .upload-form{
+
+    width: 50%;
+    margin: auto;
+  }
+  
+
+  /*  */
+
+
+  .upload-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .drop-zone {
+    border: 2px dashed #ced4da;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .file-input {
+    display: none;
+  }
+  
+  .file-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #6c757d;
+  }
+  
+  .upload-icon {
+    margin-bottom: 10px;
+  }
+  
+  .selected-file {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .submit-btn {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  /* Autocomplete styling */
+  .autocomplete-wrapper {
+    position: relative;
+  }
+  
+  .location-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+    pointer-events: none;
+  }
+  
+  /* :where(.css-dev-only-do-not-override-1kf000u).ant-select-single .ant-select-selector {
+    height: 45px !important;
+    padding: 4px 11px !important;
+  } */
+  
+  .ant-select-selection-search-input {
+    height: 19px !important;
+  }
+  
+  .ant-select-selection-placeholder {
+    line-height: 10px !important;
+  }
+  
+  .ant-select-selection-item {
+    line-height: 36px !important;
+  }
+  
+  /* Form label styling */
+  .form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+
+
+  /* Custom styles for the Select dropdown */
+.custom-dropdown .ant-select-dropdown {
+  max-height: 400px; /* Adjust dropdown height */
+  overflow: hidden;
+  padding-top: 0 !important;
+}
+
+.custom-dropdown .ant-select-item-option-content {
+  margin-bottom: 8px; /* Add spacing between options */
+}
+
+.custom-dropdown .ant-select-item {
+  padding: 8px 16px !important;
+}
+
+.custom-dropdown .ant-select-dropdown-search {
+  position: absolute;
+  bottom: 0; /* Place the search box at the bottom */
+  left: 0;
+  right: 0;
+  padding: 8px;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+  
+  
