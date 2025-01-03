@@ -9,7 +9,19 @@
     margin: 0 0.5rem;
     border-radius: 20px;
     transition: background-color 0.3s ease;
-  }
+    font-family: 'Red Hat Display',sans-serif;
+    font-weight: 700;
+}
+
+.ant-select-selection-item {
+  line-height: 36px !important;
+  color: #686972;
+  font-family: "Red Hat Display";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600!important;
+  line-height: normal;
+}
   
   .nav-tabs .nav-link.active {
     background-color: #B2E5F7;
@@ -17,13 +29,14 @@
   }
   
   .drop-zone {
-    border: 2px dashed #ccc;
-    border-radius: 8px;
-    padding: 2rem;
+    border: 2px dashed #ced4da;
+    border-radius: 4px;
+    padding: 60px;
     text-align: center;
     cursor: pointer;
-    transition: border-color 0.3s ease;
-  }
+    background-color: white;
+    margin-top: 20px;
+}
   
   .drop-zone:hover {
     border-color: #B2E5F7;
@@ -75,18 +88,19 @@
 
 
   .upload-form {
-    max-width: 500px;
+    max-width: 613px;
     margin: 0 auto;
     padding: 20px;
-  }
+}
   
   .drop-zone {
     border: 2px dashed #ced4da;
     border-radius: 4px;
-    padding: 20px;
+    padding: 60px;
     text-align: center;
     cursor: pointer;
     margin-top: 20px;
+    background-color: white;
   }
   
   .file-input {
@@ -183,5 +197,13 @@
   border-top: 1px solid #ccc;
 }
 
+
+@media only screen and (min-device-width: 200px) and (max-device-width: 920px) {
+
+  .upload-form {
+    width: 100%!important;
+    margin: auto;
+}
+}
   
   

@@ -74,10 +74,10 @@ function FaceMatchSearch() {
           className="mb-3 justify-content-center"
         >
           <Tabs.Tab eventKey="face" title="FACE">
-            <h2 className="text-center mb-3">Face Match Search</h2>
+            <h2 className="text-center mb-2 mt-5">Face Match Search</h2>
             <p className="text-center text-muted mb-4">Upload an image to find matches.</p>
             <Form className="upload-form" onSubmit={handleSubmit}>
-              <div className="container select-box-dropdown">
+              <div className="container select-box-dropdown p-0">
                 <div className="row">
                   <div className="col-lg-6 mb-3">
                     <label htmlFor="location" className="form-label">Location</label>
@@ -155,7 +155,7 @@ function FaceMatchSearch() {
             </Form>
           </Tabs.Tab>
           <Tabs.Tab eventKey="person" title="PERSON">
-          <h2 className="text-center mb-3">Person Match Search</h2>
+          <h2 className="text-center mb-2 mt-5">Person Match Search</h2>
             <p className="text-center text-muted mb-4">Upload an image to find matches.</p>
             <PersonMatchSearch />
           </Tabs.Tab>

@@ -58,6 +58,24 @@ const SearchHistory = () => {
       location: "Ikea Junction",
       faceQuality: 33,
     },
+    {
+      sno: 7,
+      image: "profile.png",
+      cameraName: "Main gate 3",
+      watchName: "4:47pm",
+      gender: "Male",
+      location: "Ikea Junction",
+      faceQuality: 33,
+    },
+    {
+      sno: 8,
+      image: "profile.png",
+      cameraName: "Main gate 3",
+      watchName: "4:47pm",
+      gender: "Male",
+      location: "Ikea Junction",
+      faceQuality: 33,
+    },
   ]);
 
   const handleDelete = (sno) => {
@@ -123,7 +141,7 @@ const SearchHistory = () => {
 
   return (
     <div className="container">
-      <h2 className="mt-2 mb-2">Search History</h2>
+      <h2 className="mt-5 mb-2 pb-2">Search History</h2>
       <Table className="custom-table"  columns={columns} dataSource={history} rowKey="sno" />
     </div>
   );

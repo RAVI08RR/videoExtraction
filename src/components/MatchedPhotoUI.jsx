@@ -72,7 +72,7 @@ function MatchedPhotoUI() {
             <Button
               variant="light"
               size="sm"
-              style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)', border: 'none' }}
+              style={{ backgroundColor: '#beb2b200', border: 'none' }}
               onClick={() => handleZoom('in', imageType)}
             >
               <img src="/pluse-zoom-icon.svg" alt="zoom in" className="image-zomm-btn" />
@@ -80,7 +80,7 @@ function MatchedPhotoUI() {
             <Button
               variant="light"
               size="sm"
-              style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)', border: 'none' }}
+              style={{ backgroundColor: '#beb2b200', border: 'none' }}
               onClick={() => handleZoom('out', imageType)}
             >
               <img src="/minus-icon.svg" alt="zoom out" className="image-zomm-btn" />
@@ -118,19 +118,22 @@ function MatchedPhotoUI() {
           <div className="mt-3">
             <Row className="g-3">
               {Object.entries(matchedPhotoMetadata).map(([key, value]) => (
-                <Col xs={6} key={key}>
+                <Col xs={3} key={key}>
                   <p className="text-muted mb-1">{key}</p>
                   <p className="fw-medium">{value}</p>
                 </Col>
               ))}
-            </Row>
-          </div>
-          <div className="mt-3 bg-light p-3 rounded">
-            <div className="d-flex justify-content-between align-items-center">
+              <Col xs={3}>
+              <div className="mt-0 bg p-3 rounded" style={{backgroundColor:'#C0EDF4'}}>
+            <div className="flex justify-content-between align-items-center" style={{flexDirection:'column'}}>
               <span className="fw-medium">Face Quality</span>
               <span className="fs-4 fw-bold">{matchedPhotoMetadata.faceQuality}</span>
             </div>
           </div>
+              </Col>
+            </Row>
+          </div>
+     
         </Col>
       </Row>
     </Container>
