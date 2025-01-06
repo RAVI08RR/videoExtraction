@@ -1,8 +1,6 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom'; // Import necessary components
 import './App.css';
-// import '../antd/dist/antd.css';
-
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import necessary components
 import FaceMatchSearch from './components/FaceMatchSearch';
 import Header from './components/Header';
 import Login from './components/Login';
@@ -10,22 +8,33 @@ import SearchHistory from './components/SearchHistory/SearchHistory';
 import PersonMatches from './components/PersonmatchesResults/PersonMatches';
 
 function App() {
+  // A helper component to conditionally render the Header
+  const Layout = ({ children }) => {
+    const location = useLocation();
+
+    // Paths where the header should not be shown
+    const hideHeaderRoutes = ['/login'];
+
+    return (
+      <>
+        {!hideHeaderRoutes.includes(location.pathname) && <Header />}
+        {children}
+      </>
+    );
+  };
+
   return (
     <Router>
-      <Header />
-      <Routes>
-        {/* Define routes for different components */}
-        <Route path="/" element={<FaceMatchSearch />} />
-        <Route path="/login" element={<Login />} />
-
-        <Route path="/history" element={<SearchHistory />} />
-        <Route path="/results-person-match" element={<PersonMatches />} />
-
-
-
-
-        {/* Add more routes as needed */}
-      </Routes>
+      <Layout>
+        <Routes>
+          {/* Define routes for different components */}
+          <Route path="/" element={<FaceMatchSearch />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/history" element={<SearchHistory />} />
+          <Route path="/results-person-match" element={<PersonMatches />} />
+          {/* Add more routes as needed */}
+        </Routes>
+      </Layout>
     </Router>
   );
 }

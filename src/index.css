@@ -122,9 +122,39 @@ code {
   .filters-section {
     margin-bottom: 1rem;
   }
-  
+
+  .nav-tabs {
+    border-bottom: none!important;
+    display: flex!important;
+    flex-direction: row!important;
+    flex-wrap: nowrap!important;
+}
+
+.ant-select, .ant-picker {
+  width: 100%;
+  margin-bottom: 0.9rem;
+}
+
+.ant-table-wrapper.custom-table.css-dev-only-do-not-override-77tu7h {
+  overflow: auto;
+}
+.offcanvas.offcanvas-end.show {
+  width: 90%!important;
+  visibility: visible;
+}
+.offcanvas-body {
+  padding: 0px;
+}
+.offcanvas-body .p-4{
+  padding: 0rem!important;
+
+}
   .results-section {
     margin-top: 1rem;
+  }
+  .position-relative.card .card-body{
+  padding: 10px!important;
+
   }
 }
 

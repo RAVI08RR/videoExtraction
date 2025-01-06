@@ -10,7 +10,8 @@ function Login() {
 
   const styles = {
     mainContainer: {
-      background: 'linear-gradient(135deg, #1a3a4a 0%, #0088cc 100%)',
+      // background: 'linear-gradient(135deg, #1a3a4a 0%, #0088cc 100%)',
+      backgroundImage: `url('/login-bg.png')`,
       backgroundSize: 'cover',
       position: 'relative',
       overflow: 'hidden',
@@ -45,7 +46,7 @@ function Login() {
   };
 
   return (
-    <div style={styles.mainContainer}>
+    <div style={styles.mainContainer} >
       {/* Background Pattern */}
       <div style={styles.backgroundPattern} />
 
