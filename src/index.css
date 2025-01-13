@@ -43,7 +43,7 @@ code {
 }
 
 .filter-form .form-item {
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
 }
 
 .submit-button {
@@ -156,6 +156,54 @@ code {
   padding: 10px!important;
 
   }
+  .results-section {
+    margin-top: 1rem;
+    overflow: hidden!important;
+}
+
+  .ant-table-container {
+    overflow: scroll;
+}
 }
 
 
+.app-content {
+  background-color: #f5f9f6;
+  height: 100vh;
+}
+
+.icon-svg-close {
+  fill: white!important;
+  stroke: white!important;
+}
+
+button.btn-close.custom-close-btn {
+  background-color: #090909!important;
+  fill: white;
+  opacity: 1;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* close menu  */
+
+
+.mobile-menu .close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 3.5rem;
+  color: #fff7f7;
+  cursor: pointer;
+  background-color: #263f43 !important;
+  border-radius: 30px;
+  padding: 5px;
+}
+
+.mobile-menu .close-btn svg {
+  width: 24px;
+  height: 24px;
+}

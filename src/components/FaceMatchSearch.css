@@ -91,6 +91,7 @@
     max-width: 613px;
     margin: 0 auto;
     padding: 20px;
+    padding-top: 0px;
 }
   
   .drop-zone {

@@ -6,7 +6,8 @@ import Header from './components/Header';
 import Login from './components/Login';
 import SearchHistory from './components/SearchHistory/SearchHistory';
 import PersonMatches from './components/PersonmatchesResults/PersonMatches';
-
+import VehicleMatchSearch from './components/VehicleMatchSearch/VehicleMatchSearch';
+import PersonMatchesResult from "./components/PersonMatchSearch/PersonMatchSearch";
 function App() {
   // A helper component to conditionally render the Header
   const Layout = ({ children }) => {
@@ -32,6 +33,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/history" element={<SearchHistory />} />
           <Route path="/results-person-match" element={<PersonMatches />} />
+          <Route path="/vehicle-match" element={<VehicleMatchSearch/>} />
+          <Route path="/person-match" element={<PersonMatchesResult/>} />
+
           {/* Add more routes as needed */}
         </Routes>
       </Layout>

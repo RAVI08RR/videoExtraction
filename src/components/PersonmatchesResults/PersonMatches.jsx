@@ -132,12 +132,14 @@ const PersonMatches = () => {
   ];
 
   return (
-    <div className="person-matches">
+    <div className="person-matches mt-2">
       <Container fluid>
+        
+
         <Row>
           <Col md={3}>
-            <div className="filters-section bg-gray-50 p-4 rounded-lg">
-              <h2 className="text-xl font-semibold mb-4">Filters</h2>
+            <div className="filters-section bg-gray-50 p-4 pt-2 rounded-lg">
+              <h4 className="text-xl font-semibold mb-2 text-left fs-25" style={{fontSize:'25px',lineHeight:'44px'}}>Filters</h4>
               <Form
                 form={form}
                 layout="vertical"
@@ -225,7 +227,7 @@ const PersonMatches = () => {
               </div>
 
               <div className="selected-filters flex flex-wrap gap-2 mb-4">
-              <h4 className='fs-16 pl-2'> {data.length} Results Found</h4>    
+              <h6 className='fs-16 pl-2 pt-2'> {data.length} Results Found</h6>    
                 {selectedCameras.map((camera) => (
                   <div 
                     key={camera}

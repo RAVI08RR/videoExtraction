@@ -129,7 +129,7 @@ const SearchHistory = () => {
 
         <Space size="middle">
             <Button className="view-btn" >View</Button>
-            <Button className="view-h-btn btn btn-dark" >View History</Button>
+            <Button className="view-h-btn btn btn-dark" >View Result</Button>
           <Button onClick={() => handleDelete(record.sno)} type="danger">  
 
           <img src="delete.svg" alt="img" className="delete-btn"/>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Card, Image , Modal, Offcanvas } from 'react-bootstrap';
 import { MoreVertical, Upload, Edit, Eye } from 'lucide-react';
+import { X } from 'lucide-react';
+
 import { Select,Input } from 'antd';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -322,18 +324,27 @@ function TeamResults() {
 
   const ModalContent = () => (
     modalData && (
-      <Modal   size="xl"
+      <Modal className='model-team-results'  size='lg'
       show={showModal} onHide={() => setShowModal(false)} centered>
-        <Modal.Header className='matched-ui-header-result' closeButton>
-    
+        <Modal.Header className='matched-ui-header-result' >
+        <button
+          type="button"
+          className="btn-close custom-close-btn"
+          onClick={() => setShowModal(false)}
+          aria-label="Close"
+        >
+         {/* <img src='/close-icon.svg' alt='close' className='close-icon'/> */}
+         <X  className='icon-svg-close'/>
+
+        </button>
         </Modal.Header >
         <MatchedPhotoUI/>
     
-        <Modal.Footer>
+        {/* <Modal.Footer>
           <Button variant="secondary" onClick={() => setShowModal(false)}>
             Close
           </Button>
-        </Modal.Footer>
+        </Modal.Footer> */}
       </Modal>
     )
   );

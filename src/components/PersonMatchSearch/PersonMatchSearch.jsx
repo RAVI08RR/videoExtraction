@@ -29,7 +29,10 @@ const PersonMatchSearch = () => {
   ];
 
   return (
-    <Container className="text-center p-20" style={{ backgroundColor: "#F5F9F6", padding: "20px" }} fluid>
+    <Container className=" p-20" style={{ backgroundColor: "#F5F9F6", padding: "20px" }} fluid>
+
+<h2 className="text-center mb-2 mt-5">Person Search</h2>
+          <p className="text-center text-muted mb-4">Select the below filters.</p>
       <Form>
         <Row className="justify-content-center">
           <Col md={2}>
@@ -90,13 +93,18 @@ const PersonMatchSearch = () => {
             </Form.Group>
           </Col>
         </Row>
+        <div className="text-center">
         <Button
           type="submit"
           className="mt-4 px-5 submit-btn btn btn-primary"
           style={{ backgroundColor: "#344E41", border: "none" }}
+
         >
+          <a href="/results-person-match" style={{textDecoration:'none',color:'white'}}>
           Submit
+          </a>
         </Button>
+        </div>
       </Form>
     </Container>
   );

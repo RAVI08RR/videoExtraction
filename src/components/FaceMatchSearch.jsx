@@ -1,23 +1,18 @@
-
-
-
 import React, { useState } from 'react';
-import { Tabs, Container, Form, Button } from 'react-bootstrap';
-import { Select, Input } from 'antd';
+import { Container, Form, Button } from 'react-bootstrap';
+import { Select, Input, Skeleton } from 'antd';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './FaceMatchSearch.css';
-import PersonMatchSearch from './PersonMatchSearch/PersonMatchSearch';
 import TeamResults from './TeamResults';
-import VehicleMatchSearch from './VehicleMatchSearch/VehicleMatchSearch';
 
 function FaceMatchSearch() {
-  const [key, setKey] = useState('face');
   const [file, setFile] = useState(null);
   const [submitted, setSubmitted] = useState(false);
   const [camera, setCamera] = useState('camera');
   const [location, setLocation] = useState('Location');
   const [locationSearch, setLocationSearch] = useState('');
   const [cameraSearch, setCameraSearch] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const locations = [
     { value: 'hyderabad', label: 'Hyderabad' },
@@ -53,7 +48,12 @@ function FaceMatchSearch() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    // Simulate API call or processing time
+    setTimeout(() => {
+      setLoading(false);
+      setSubmitted(true);
+    }, 2000);
   };
 
   const handleLocationChange = (value) => {
@@ -67,20 +67,17 @@ function FaceMatchSearch() {
   return (
     <Container className="mt-0" fluid style={{ backgroundColor: '#F5F9F6', padding: '20px', height: '100vh' }}>
       {!submitted ? (
-        <Tabs
-          id="search-tabs"
-          activeKey={key}
-          onSelect={(k) => setKey(k)}
-          className="mb-3 justify-content-center"
-        >
-          <Tabs.Tab eventKey="face" title="FACE">
-            <h2 className="text-center mb-2 mt-5">Face Match Search</h2>
-            <p className="text-center text-muted mb-4">Upload an image to find matches.</p>
-            <Form className="upload-form" onSubmit={handleSubmit}>
-              <div className="container select-box-dropdown p-0">
-                <div className="row">
-                  <div className="col-lg-6 mb-3">
-                    <label htmlFor="location" className="form-label">Location</label>
+        <>
+          <h2 className="text-center mb-2 mt-5">Face Match Search</h2>
+          <p className="text-center text-muted mb-4">Upload an image to find matches.</p>
+          <Form className="upload-form" onSubmit={handleSubmit}>
+            <div className="container select-box-dropdown p-0">
+              <div className="row">
+                <div className="col-lg-6 mb-3">
+                  <label htmlFor="location" className="form-label">Location</label>
+                  {loading ? (
+                    <Skeleton.Input active size="large" block />
+                  ) : (
                     <Select
                       showSearch
                       value={location}
@@ -107,9 +104,13 @@ function FaceMatchSearch() {
                       )}
                       style={{ width: '100%' }}
                     />
-                  </div>
-                  <div className="col-lg-6 mb-3">
-                    <label htmlFor="camera" className="form-label">Camera</label>
+                  )}
+                </div>
+                <div className="col-lg-6 mb-3">
+                  <label htmlFor="camera" className="form-label">Camera</label>
+                  {loading ? (
+                    <Skeleton.Input active size="large" block />
+                  ) : (
                     <Select
                       showSearch
                       value={camera}
@@ -122,12 +123,27 @@ function FaceMatchSearch() {
                       options={cameras.filter((cam) =>
                         cam.label.toLowerCase().includes(cameraSearch.toLowerCase())
                       )}
-                   
+                      dropdownRender={(menu) => (
+                        <>
+                          <div style={{ padding: '8px' }}>
+                            <Input
+                              placeholder="Search camera"
+                              value={cameraSearch}
+                              onChange={(e) => setCameraSearch(e.target.value)}
+                            />
+                          </div>
+                          {menu}
+                        </>
+                      )}
                       style={{ width: '100%' }}
                     />
-                  </div>
+                  )}
                 </div>
               </div>
+            </div>
+            {loading ? (
+              <Skeleton.Image active style={{ width: '100%', height: '200px' }} />
+            ) : (
               <div
                 className="drop-zone"
                 onDragOver={handleDragOver}
@@ -141,28 +157,20 @@ function FaceMatchSearch() {
                   accept=".jpg,.jpeg,.png,.gif"
                 />
                 <label htmlFor="fileInput" className="file-label">
-                  <img src="/upload-icon.svg" alt="img" className="upload-icon m-auto" />
+                  <img src="/upload-icon.svg" alt="Upload" className="upload-icon m-auto" />
                   <span>Drop files or click here</span>
                 </label>
                 {file && <p className="selected-file mt-2">{file.name}</p>}
               </div>
-              <p className="text-center text-muted mt-2">JPG, JPEG, PNG, GIF</p>
-              <div className="text-center mt-4">
-                <Button type="submit" className="submit-btn">
-                  Submit
-                </Button>
-              </div>
-            </Form>
-          </Tabs.Tab>
-          <Tabs.Tab eventKey="person" title="PERSON">
-          <h2 className="text-center mb-2 mt-5">Person Match Search</h2>
-            <p className="text-center text-muted mb-4">Upload an image to find matches.</p>
-            <PersonMatchSearch />
-          </Tabs.Tab>
-          <Tabs.Tab eventKey="vehicle" title="VEHICLE">
-            <VehicleMatchSearch />
-          </Tabs.Tab>
-        </Tabs>
+            )}
+            <p className="text-center text-muted mt-2">JPG, JPEG, PNG, GIF</p>
+            <div className="text-center mt-4">
+              <Button type="submit" className="submit-btn" disabled={loading}>
+                {loading ? 'Processing...' : 'Submit'}
+              </Button>
+            </div>
+          </Form>
+        </>
       ) : (
         <TeamResults />
       )}
@@ -171,5 +179,3 @@ function FaceMatchSearch() {
 }
 
 export default FaceMatchSearch;
-
-

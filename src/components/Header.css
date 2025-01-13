@@ -94,4 +94,289 @@
     margin: 0.5rem 0;
   }
   
-  
+  /* Hamburger Menu Styles */
+.hamburger-btn {
+  padding: 0;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  /* background-color: white; */
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu.show {
+  left: 0;
+  background-color: black;
+  color: white;
+}
+
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobile-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  color: #fff8f8;
+  text-decoration: none;
+  transition: all 0.2s;
+  border-left: 3px solid transparent;
+}
+
+.mobile-menu-item:hover {
+  background-color: #f5f5f5;
+}
+
+/* Overlay when mobile menu is open */
+.mobile-menu.show::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+
+.header-nav {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Center Navigation Styles */
+.center-nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-link {
+  color: #5C5C5C;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #000;
+}
+
+.nav-link.active {
+  color: #000000;
+  font-weight: 600;
+  border-radius: 50px;
+  border: 1px solid #93C2C9;
+  background: #BEE4EA;
+  width: 107px;
+  text-align: center;
+
+}
+
+/* History Button Styles */
+.history-btn {
+  background: none;
+  border: 1px solid #5C5C5C;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  color: #5C5C5C;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.history-btn:hover {
+  background: #f5f5f5;
+}
+
+/* Cart Styles */
+.cart-wrapper {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #FF0000;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* Profile Styles */
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-info {
+  text-align: right;
+}
+
+.profile-name {
+  display: block;
+  font-weight: 500;
+  color: #000;
+}
+
+.profile-role {
+  display: block;
+  font-size: 0.875rem;
+  color: #5C5C5C;
+}
+
+.profile-avatar img {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  background-color: white;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu.show {
+  left: 0;
+}
+
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobile-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.mobile-menu-item:hover {
+  background-color: #f5f5f5;
+}
+
+.mobile-menu-item.active {
+  color: #000;
+  font-weight: 600;
+}
+
+.mobile-nav-links {
+  border-bottom: 1px solid #eee;
+}
+
+/* Overlay when mobile menu is open */
+.mobile-menu.show::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* Update the existing nav-link styles */
+.nav-link {
+  color: #5C5C5C;
+  text-decoration: none;
+ 
+  padding: 0.5rem 1rem;
+  transition: all 0.2s;
+  border-bottom: 2px solid transparent;
+  font-size: 14px;
+  font-family: 'Red Hat Display';
+  font-weight: 700 !important;
+}
+
+.nav-link:hover {
+  color: #000;
+}
+
+
+/* Update mobile menu item styles */
+.mobile-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.2s;
+  border-left: 3px solid transparent;
+}
+
+.mobile-menu-item:hover {
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+.mobile-menu-item.active {
+  color: #ffffff;
+  font-weight: 600;
+  /* background-color: #f5f5f5; */
+  border-left: 3px solid #000;
+}
+
+/* Update history button styles */
+.history-btn {
+  background: none;
+  border: 1px solid #5C5C5C;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  color: #5C5C5C;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.history-btn:hover {
+  background: #f5f5f5;
+  color: #000;
+  border-color: #000;
+}
+
+.history-btn {
+  background: #f5f5f5;
+  color: #000;
+  border-color: #000;
+  font-weight: 600;
+  border-radius: 10px;
+  border: 1px solid #263F43;
+}
