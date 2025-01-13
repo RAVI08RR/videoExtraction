@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button, Card, Image , Modal, Offcanvas } from 'react-bootstrap';
 import { MoreVertical, Upload, Edit, Eye } from 'lucide-react';
 import { X } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 
 import { Select,Input } from 'antd';
 
@@ -126,7 +127,7 @@ function TeamResults() {
     {
       id: 1,
       image: "/profile.png",
-      dateTime: "27/7/2024 | 12:39 pm",
+      dateTime: "27/7/2024|12:39 pm",
       location: "Madhapur",
       age: 32,
       gender: "Male",
@@ -138,7 +139,7 @@ function TeamResults() {
     {
       id: 2,
       image: "/profile.png",
-      dateTime: "27/7/2024 | 12:39 pm",
+      dateTime: "27/7/2024|12:39 pm",
       location: "Mindspace Junction",
       age: 40,
       gender: "Male",
@@ -148,7 +149,7 @@ function TeamResults() {
     {
       id: 3,
       image: "/profile.png",
-      dateTime: "27/7/2024 | 12:39 pm",
+      dateTime: "27/7/2024|12:39 pm",
       location: "Mindspace Junction",
       age: 40,
       gender: "Male",
@@ -162,7 +163,7 @@ function TeamResults() {
   const handleShow = () => setShow(true);
 
   const [uploadedFile, setUploadedFile] = useState(null);
-  const [subjectImage, setSubjectImage] = useState("/placeholder.svg");
+  const [subjectImage, setSubjectImage] = useState("/placeholder.png");
   const [showModal, setShowModal] = useState(false);
   const [modalData, setModalData] = useState(null);
   const [locationSearch, setLocationSearch] = useState('');
@@ -212,21 +213,36 @@ function TeamResults() {
               <Col md={6}>
                 <div className="mb-3">
                   <div className="info-label">Date/Time</div>
-                  <div className="info-value">{result.dateTime}</div>
+                  <div className="info-value" style={{display:'flex',gap:'5px'}}>
+                  <img src='/date-icon.svg' alt='img' className='map-icon' />
+                    {result.dateTime}</div>
                 </div>
                 <div className="mb-3">
                   <div className="info-label">Location</div>
-                  <div className="info-value">{result.location}</div>
+                  <div className="info-value" style={{display:'flex',gap:'5px'}}> 
+                    
+                  <img src='/map-location.svg' alt='img' className='map-icon' />
+
+                  
+                  {result.location}</div>
                 </div>
                 <div>
                   <div className="info-label">Gender</div>
-                  <div className="info-value">{result.gender}</div>
+                  <div className="info-value" style={{display:'flex',gap:'5px'}}>
+                  <img src='/Gender.svg' alt='img' className='gender-icon' />
+
+                    
+                    {result.gender}</div>
                 </div>
               </Col>
               <Col md={6}>
                 <div className="mb-3">
                   <div className="info-label">Camera</div>
-                  <div className="info-value">{result.camera}</div>
+                  <div className="info-value" style={{display:'flex',gap:'5px'}}>
+                    
+                  <img src='/date-icon.svg' alt='img' className='map-icon' />
+                    
+                    {result.camera}</div>
                 </div>
                 <div className="mb-3">
                   <div className="info-label">Age</div>
@@ -271,14 +287,24 @@ function TeamResults() {
           <Col>
             <div className="info-group">
               <div className="info-label">Date/Time</div>
-              <div className="info-value">{result.dateTime}</div>
+              <div className="info-value" style={{display:'flex',gap:'5px'}}> 
+                    
+                    <img src='/date-icon.svg' alt='img' className='map-icon' />
+                
+                
+                {result.dateTime}</div>
             </div>
           </Col>
 
           <Col>
             <div className="info-group">
               <div className="info-label">Location</div>
-              <div className="info-value">{result.location}</div>
+              <div className="info-value" style={{display:'flex',gap:'5px'}}> 
+                    
+                    <img src='/map-location.svg' alt='img' className='map-icon' />
+                
+                
+                {result.location}</div>
             </div>
           </Col>
 
@@ -292,7 +318,12 @@ function TeamResults() {
           <Col xs="auto">
             <div className="info-group">
               <div className="info-label">Gender</div>
-              <div className="info-value">{result.gender}</div>
+              <div className="info-value" style={{display:'flex',gap:'5px'}}>
+                  <img src='/Gender.svg' alt='img' className='gender-icon' />
+                
+                
+                
+                {result.gender}</div>
             </div>
           </Col>
 

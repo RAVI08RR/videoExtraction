@@ -177,7 +177,9 @@ const PersonMatches = () => {
                   name="location"
                   className="form-item"
                 >
-                  <Select className="w-full" onChange={setSelectedLocation} value={selectedLocation}>
+                  <Select className="w-full" onChange={setSelectedLocation} value={selectedLocation}
+                      placeholder="Select Location"
+                  >
                     {locations.map((location) => (
                       <Select.Option key={location} value={location} className="location-select-boxes">
                         {location}
@@ -196,6 +198,7 @@ const PersonMatches = () => {
                     mode="multiple"
                     onChange={setSelectedCameras}
                     value={selectedCameras}
+                    placeholder="Select Camera"
                   >
                     {cameras.map((camera) => (
                       <Select.Option key={camera} value={camera} >
