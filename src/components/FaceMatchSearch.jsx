@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
-import { Select, Input, Skeleton } from 'antd';
+import { Select, Input, Skeleton, notification } from 'antd';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './FaceMatchSearch.css';
 import TeamResults from './TeamResults';
+import { fetchVideoUpload } from '../Apis/callbacks';
 
 function FaceMatchSearch() {
   const [file, setFile] = useState(null);
+  const [selectedFile, setSelectedFile] = useState();
   const [submitted, setSubmitted] = useState(false);
   const [camera, setCamera] = useState('camera');
   const [location, setLocation] = useState('Location');
@@ -35,6 +37,7 @@ function FaceMatchSearch() {
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
+    setSelectedFile(event.target.files[0]);
   };
 
   const handleDragOver = (event) => {
@@ -46,14 +49,36 @@ function FaceMatchSearch() {
     setFile(event.dataTransfer.files[0]);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
-    // Simulate API call or processing time
-    setTimeout(() => {
+  
+    const formData = new FormData();
+    formData.append("file", selectedFile);
+  
+    try {
+      let data = await fetchVideoUpload(formData);
+      if (data) {
+        notification.success({
+          message: "Upload Successful",
+          description: "Your video has been uploaded successfully.",
+        });
+        // Set submitted to true to show TeamResults component
+        setSubmitted(true);
+      } else {
+        notification.error({
+          message: "Upload Failed",
+          description: "Failed to upload video. Please try again.",
+        });
+      }
+    } catch (error) {
+      notification.error({
+        message: "Unexpected Error",
+        description: "An unexpected error occurred. Please try again.",
+      });
+    } finally {
       setLoading(false);
-      setSubmitted(true);
-    }, 2000);
+    }
   };
 
   const handleLocationChange = (value) => {

@@ -2,21 +2,11 @@ import React, { useState } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function MatchedPhotoUI() {
+function MatchedPhotoUI({ data }) {
   const [subjectZoom, setSubjectZoom] = useState(1);
   const [matchedZoom, setMatchedZoom] = useState(1);
   const [subjectPosition, setSubjectPosition] = useState({ x: 0, y: 0 });
   const [matchedPosition, setMatchedPosition] = useState({ x: 0, y: 0 });
-
-  const matchedPhotoMetadata = {
-    dateTime: "2/7/2024 | 12:39 pm",
-    camera: "Main gate 1",
-    gender: "Male",
-    location: "Madhapur",
-    age: 32,
-    beard: "NIL",
-    faceQuality: 62,
-  };
 
   const handleZoom = (zoomType, imageType) => {
     const setZoom = imageType === "subject" ? setSubjectZoom : setMatchedZoom;
@@ -93,13 +83,12 @@ function MatchedPhotoUI() {
   );
 
   return (
-    <Container >
+    <Container>
       <Row className="g-4 justify-content-center p-0">
-      
         <Col md={6}>
           <ImageCard
             title="Subject Image"
-            src="/matched-1.png"
+            src={data.image}  
             zoom={subjectZoom}
             position={subjectPosition}
             imageType="subject"
@@ -108,19 +97,21 @@ function MatchedPhotoUI() {
         <Col md={6}>
           <ImageCard
             title="Matched - Photo"
-            src="/matched-2.png"
+            src={data.image} 
             zoom={matchedZoom}
             position={matchedPosition}
             imageType="matched"
           />
-          
+
           <div className="mt-3">
             <Row>
-              {Object.entries(matchedPhotoMetadata).map(([key, value]) => (
-                <Col xs={6} sm={4} key={key}>
-                  <p className="text-muted mb-1">{key}</p>
-                  <p className="fw-medium">{value}</p>
-                </Col>
+              {Object.entries(data).map(([key, value]) => (
+                key !== 'image' && key !== 'subjectImage' && key !== 'id' && key !== 'expanded' && (
+                  <Col xs={6} sm={4} key={key}>
+                    <p className="text-muted mb-1">{key}</p>
+                    <p className="fw-medium">{value}</p>
+                  </Col>
+                )
               ))}
             </Row>
           </div>
