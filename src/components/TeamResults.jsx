@@ -860,7 +860,8 @@ function TeamResults() {
             <X className='icon-svg-close'/>
           </button>
         </Modal.Header>
-        <MatchedPhotoUI data={modalData} />      </Modal>
+        <MatchedPhotoUI data={modalData} />
+              </Modal>
     )
   );
 
